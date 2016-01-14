@@ -1,0 +1,42 @@
+<!-- INCLUDE overall_header.html -->
+<h1>{L_EMAILS_USERS_LIST}</h1>
+{L_EMAILS_USERS_LIST_EXPLAIN}
+<br />
+<div class="pagination" style="padding-bottom: 4px;">
+   <a href="{U_CSV_LIST}"><input class="button2" value="{L_EXPORT_CSV}" type="submit"></a> &bull; {TOTAL_USERS}<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
+</div>
+<div class="forumbg forumbg-table">
+   <div class="inner">
+      <table class="table1" cellspacing="1" padding="1">
+         <thead>
+            <tr>
+               <th class="table1" style="text-align:center;">{L_USER_ID}</th>
+               <th class="table1" style="text-align:center;">{L_SORT_USERNAME}</th>
+               <th class="table1" style="text-align:center;">{L_EMAIL_ADDRESS}</th>
+			   <th class="table1" style="text-align:center;">{L_SORT_JOINED}</th>
+			   <th class="table1" style="text-align:center;">{L_LAST_VISIT}</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- IF .list -->
+               <!-- BEGIN list -->
+			   <!-- IF list.S_ROW_COUNT is even --><tr class="row2"><!-- ELSE --><tr class="row1"><!-- ENDIF -->
+                  <td style="text-align:center;">{list.ID}</td>
+                  <td>{list.USERNAME_FULL}</td>
+                  <td><a href="mailto:{list.EMAIL}">{list.EMAIL}</a></td>
+				  <td>{list.REGDATE}</td>
+				  <td>{list.LASTVISIT}</td>
+               </tr>
+               <!-- END list -->
+            <!-- ENDIF -->
+         </tbody>
+      </table>
+   </div>
+</div>
+
+<div class="pagination">
+   {TOTAL_USERS}<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
+</div>
+
+<br /><br />
+<!-- INCLUDE overall_footer.html -->

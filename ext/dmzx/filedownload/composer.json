@@ -1,0 +1,36 @@
+{
+    "name": "dmzx/filedownload",
+    "type": "phpbb-extension",
+    "description": "Will add a nice download block to the inline attachments",
+    "homepage": "http://www.dmzx-web.net",
+    "version": "1.0.1",
+    "time": "2015-08-29",
+    "keywords": [
+        "phpbb",
+        "extension",
+        "File Download"
+    ],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "dmzx",
+            "homepage": "http://www.dmzx-web.net",
+            "email": "info@dmzx-web.net",
+            "role": "Extension Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "File Download",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.6-RC1,<3.2.*@dev"
+        },
+        "version-check": {
+            "host": "www.phpbb.com",
+            "directory": "/customise/db/extension/file_download",
+            "filename": "version_check"
+        }
+    }
+}
